@@ -1,0 +1,36 @@
+# Config general
+seed: 42
+paths:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  registries_dir: models/registries
+series_keys:
+  provincia: "provincia"
+  canton: "canton"
+  delito: "delito"
+date_col: "Periodo"
+target_col: "Total_delitos"
+exogenous:
+  - "Poblacion"
+  - "PIB_por_canton"
+  - "edu_Años_Educ"
+  - "tas_desempleo"
+  - "tas_subempleo"
+  - "tas_pobreza"
+frequency: "W-MON"  # Semanal con corte lunes
+tft:
+  max_epochs: 20
+  gpus: 1
+  hidden_size: 64
+  attention_head_size: 4
+  dropout: 0.1
+xgboost:
+  n_estimators: 400
+  max_depth: 6
+  learning_rate: 0.05
+arimax:
+  order: [1,1,1]
+  seasonal_order: [0,0,0,0]
+backtest:
+  folds: 8
+  horizon_weeks: 1
