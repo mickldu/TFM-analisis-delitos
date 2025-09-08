@@ -1,7 +1,7 @@
-TFM análisis de delitos en Ecuador
+Modelo Predictivo de Criminalidad en Ecuador mediante la comparación de Temporal Fusion Transformer (TFT), XGBoost, ARIMA, EXPSmooth
 
 Objetivo
-Desarrollar y comparar modelos de predicción de delitos por provincia y cantón con variables exógenas. Base: Temporal Fusion Transformer frente a ARIMAX y XGBoost. Integración futura con LangChain para consultas en lenguaje natural.
+Desarrollar y comparar modelos de predicción de delitos en Ecuador utilizando ExpSmooth, ARIMA, XGBoost y Temporal Fusion Transformer con datos semanales y variables socioeconómicas, con el fin de generar pronósticos que apoyen la toma de decisiones en seguridad y política pública.
 
 Estructura del proyecto
 src/tfm_delitos       Código de la librería
@@ -14,8 +14,8 @@ tests                 Pruebas unitarias
 docs                  Documentación
 
 Datos esperados
-Coloca tus fuentes en data/raw
-Ejemplos usados en tus consultas previas
+Fuentes en data/raw
+DataSet Utilizados
 - delitos_poblacion_semanal.csv
 - enemu_semanal.csv
 - POBLACION_PROYECTADA.xlsx
@@ -23,7 +23,6 @@ Ejemplos usados en tus consultas previas
 - ENEMDU_LABORAL_2018_2024.xlsx
 - PBI_1965_2023.xlsx
 - ndd_datos.csv
-Acomódalos por nombre en data/raw y ajusta rutas en configs/default.yaml
 
 Entorno
 1. Instala Python 3.10 o 3.11
@@ -45,10 +44,7 @@ Uso rápido
 
 Registro de modelos
 Se guardan en models/registries con claves por (provincia, cantón, delito).
-Soporte para ARIMAX, XGBoost y TFT. Si no existe un modelo entrenado para una clave, el CLI lo indicará de forma clara.
-
-Integración con LangChain
-Se deja un módulo base en src/tfm_delitos/utils/langchain_gateway.py para orquestar preguntas simples a modelos ya entrenados.
+Soporte para EXPSmooth, ARIMAX, XGBoost,TFT. Si no existe un modelo entrenado para una clave, el CLI lo indicará de forma clara.
 
 Convenciones
 - Código en src con import tfm_delitos
@@ -57,7 +53,7 @@ Convenciones
 - Estilo PEP8 y docstrings cortos
 
 Licencia
-MIT por defecto. Ajusta según tu institución.
+MIT por defecto.
 
 Contacto
-Autor: Miguel Espinoza Rosero
+Autor: Miguel Angel Rosero
