@@ -1,9 +1,9 @@
-Modelo Predictivo de Criminalidad en Ecuador mediante la comparación de Temporal Fusion Transformer (TFT), XGBoost, ARIMA, EXPSmooth
+# Modelo Predictivo de Criminalidad en Ecuador mediante la comparación de Temporal Fusion Transformer (TFT), XGBoost, ARIMA, EXPSmooth
 
-Objetivo
+## Objetivo
 Desarrollar y comparar modelos de predicción de delitos en Ecuador utilizando ExpSmooth, ARIMA, XGBoost y Temporal Fusion Transformer con datos semanales y variables socioeconómicas, con el fin de generar pronósticos que apoyen la toma de decisiones en seguridad y política pública.
 
-Estructura del proyecto
+## Estructura del proyecto en Desarrollo
 src/tfm_delitos       Código de la librería
 scripts               Ejecutables de entrenamiento y predicción
 configs               Configuración YAML por entorno
@@ -13,7 +13,7 @@ notebooks             EDA y prototipos
 tests                 Pruebas unitarias
 docs                  Documentación
 
-Datos esperados
+## Datos esperados
 Fuentes en data/raw
 DataSet Utilizados
 - delitos_poblacion_semanal.csv
@@ -24,7 +24,7 @@ DataSet Utilizados
 - PBI_1965_2023.xlsx
 - ndd_datos.csv
 
-Entorno
+## Entorno
 1. Instala Python 3.10 o 3.11
 2. Crea entorno virtual
    python -m venv .venv
@@ -33,7 +33,7 @@ Entorno
 3. Instala dependencias
    pip install -r requirements.txt
 
-Uso rápido
+## Uso rápido
 1. Configura el archivo configs/default.yaml con rutas de datos y llaves de serie
 2. Entrena
    python scripts/train.py --config configs/default.yaml
@@ -42,11 +42,11 @@ Uso rápido
 4. Predicción para la próxima semana por provincia, cantón y delito
    python scripts/predict_cli.py --config configs/default.yaml --fecha 2025-09-01 --provincia PICHINCHA --canton QUITO --delito ROBO
 
-Registro de modelos
+## Registro de modelos
 Se guardan en models/registries con claves por (provincia, cantón, delito).
 Soporte para EXPSmooth, ARIMAX, XGBoost,TFT. Si no existe un modelo entrenado para una clave, el CLI lo indicará de forma clara.
 
-Convenciones
+## Convenciones
 - Código en src con import tfm_delitos
 - Configuración en YAML
 - Semillas y logs en outputs/logs
